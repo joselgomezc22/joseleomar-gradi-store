@@ -1,1 +1,143 @@
-<h1>hola</h1>
+<!--This product belongs in the following collections:
+<hr>
+{% for collection in collections %}
+    {{ collection  | json}}
+    <hr>
+{% endfor %}
+-->
+{% assign settings_colores_array = settings.select_products_options | split: ' ' %}
+<style>
+    {% for color in settings_colores_array %}
+        {% assign css = color | split: ':' %}
+        .background_color_{{css[0]}}{
+            background-color:{{css[1]}}; 
+        }
+        <br>
+    {% endfor %}
+</style>
+
+<hr>
+<h1>{{section.settings.header}}</h1>
+<!-- 
+<ul>
+    {% for product in collections.all.products %}
+    <li>{{ product | json}}</li>
+    {% endfor %}
+</ul>     
+-->
+ 
+<div class="">
+  
+    <div class="grid">
+        
+        {% for product in collections[section.settings.featured_collection].products limit: section.settings.prod_cant %}
+                           
+        <div id="product_{{product.id}}_main" class="grid__cell">
+
+            <h2>{{ product.title }}</h2>
+            
+            <dl>
+                <dt><span>Price</span></dt>
+                <dd>{{ product.price | money }}</dd> 
+            </dl>
+            
+            
+            {%- assign featured_image = product.featured_image -%}
+            <a href="{{product.url}}">
+                <img id="product_{{product.id}}_image" class="product__image" src="{{ featured_image | img_url: '600x'}}" alt="{{ featured_image.alt | escape }}">
+            </a>
+            
+            {% form 'product', product %}
+
+            {%-if product.variants-%}
+            <label>
+  
+               
+                {% for variant in product.variants %}
+                <a id="product_{{product.id}}_variant_{{ variant.title }}" href="">
+                    <span>{{ variant.title }}</span>
+                    <span> <img src="{{ variant.featured_image.src | img_url: '20x'}}" alt=""></span>
+                </a>  
+                {% endfor %}
+                  
+                 
+            </label>
+            {%- endif -%}
+            
+            <button type="submit" {% unless product.available %} disabled="disabled"{% endunless %}>
+                {%- if product.available -%}
+                Add to Cart
+                {%- else -%}
+                Sold Out
+                {%- endif -%}
+            </button>
+            {% endform %}
+        </div>
+            {% endfor %}
+        </div>
+</div>
+ 
+
+{% schema %}
+{
+  "name": "ProductsGradiweb",
+  "tag":"div",
+  "class":"clase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Coloca el titulo"
+    },
+    {
+      "type": "number",
+      "id": "prod_cant",
+      "label": "Prod Quant"
+    },
+    {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Featured collection"
+    }
+      
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% stylesheet %}
+.grid {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: -15px;
+    font-size: 0;
+}
+
+
+.grid__cell {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    padding-left: 15px;
+    margin: 0;
+    vertical-align: top;
+    font-size: 1rem;
+    width: 25%;
+}
+
+.product{
+    min-height: 70vh;
+}
+
+.product__image{
+    width:100%;
+    max-height: 300px;
+    min-height: 300px;
+    object-fit: cover;
+}
+{% endstylesheet %}

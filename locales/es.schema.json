@@ -212,6 +212,14 @@
           "info": "Visible cuando las sugerencias de productos están activadas."
         }
       }
+    },
+    "select_products_options":{
+      "name":"Colores de productos de Tema",
+      "settings":{
+        "colors_set":{
+          "label":"Set de Colores"
+        }
+      }
     }
   },
   "sections": {
