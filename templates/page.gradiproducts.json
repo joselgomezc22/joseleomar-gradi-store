@@ -1,12 +1,15 @@
 {
-    "sections": {
-      "main": {
-        "type": "productsgrid",
-        "settings": {
-        }
+  "sections": {
+    "main": {
+      "type": "productsgrid",
+      "settings": {
+        "header": "jo",
+        "prod_cant": 2,
+        "featured_collection": "coleccion-c-verano"
       }
-    }, 
-    "order": [
-      "main"
-    ]
-  } 
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

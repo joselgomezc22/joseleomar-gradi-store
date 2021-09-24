@@ -213,11 +213,11 @@
         }
       }
     },
-    "select_products_options":{
-      "name":"Colores de productos de Tema",
-      "settings":{
-        "colors_set":{
-          "label":"Set de Colores"
+    "select_products_options": {
+      "name": "Colores de productos de Tema",
+      "settings": {
+        "colors_set": {
+          "label": "Set de Colores"
         }
       }
     }
