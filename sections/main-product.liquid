@@ -209,7 +209,7 @@
                     {{ product.variants | json }}
                   </script>
                 </variant-radios>
-              {%- else -%}
+              {%- elsif block.settings.picker_type == 'dropdown' -%}
                 <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
                     <div class="product-form__input product-form__input--dropdown">
@@ -237,6 +237,31 @@
                     {{ product.variants | json }}
                   </script>
                 </variant-selects>
+
+              {%- elsif block.settings.picker_type == 'radio_group' -%}
+              <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                {%- for option in product.options_with_values -%}
+                    <fieldset class="js product-form__input">
+                      <legend class="form__label">{{ option.name }}</legend>
+                      {%- for value in option.values -%}
+                        <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                              name="{{ option.name }}"
+                              value="{{ value | escape }}"
+                              form="product-form-{{ section.id }}"
+                              class="radio__input"
+                              {% if option.selected_value == value %}checked{% endif %}
+                        >
+                        <label class="radio__label background_color_{{ value }}"
+                         for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                          
+                        </label>
+                      {%- endfor -%}
+                    </fieldset>
+                {%- endfor -%}
+                <script type="application/json">
+                  {{ product.variants | json }}
+                </script>
+              </variant-radios> 
               {%- endif -%}
             {%- endunless -%}
 
@@ -389,6 +414,42 @@
     </modal-dialog>
   {%- endfor -%}
 </section>
+{% assign settings_colores_array = settings.select_products_options | split: ' ' %}
+<style>
+  {% for color in settings_colores_array %}
+  {% assign css = color | split: ':' %}
+  .background_color_{{css[0]}}{
+      background-color:{{css[1]}}; 
+  }
+  {% endfor %}
+</style>
+
+{% stylesheet %}
+  
+
+  
+.radio{
+}
+.radio__input{
+     display:none
+}
+.radio__label{
+    display:inline-block;
+    width:12px;
+    height:12px;
+    border-radius:25px;
+    border: 1px solid black;
+    margin-right: 5px;
+    padding: 0 !important;
+}
+.radio__input:checked + label {
+    border: 1px solid white !important;
+    
+}
+.radio__input:hover label{
+    border: 1px solid white !important;
+}
+{% endstylesheet %}
 
 {% javascript %}
   class ProductModal extends ModalDialog {
@@ -568,6 +629,10 @@
             {
               "value": "button",
               "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            },
+            {
+              "value": "radio_group",
+              "label": "Radio Group"
             }
           ],
           "default": "button",

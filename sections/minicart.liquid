@@ -1,0 +1,38 @@
+<div>
+  <h2>minicart</h2>
+</div>
+<style>
+   
+</style>
+{% stylesheet %}
+
+{% endstylesheet %}
+
+<script>
+    
+</script>
+
+{% schema %}
+{
+  "name": "ProductsGradiweb",
+  "tag":"div",
+  "class":"clase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Coloca el titulo"
+    },
+    {
+      "type": "number",
+      "id": "prod_cant",
+      "label": "Prod Quant"
+    },
+    {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Featured collection"
+    }
+  ]
+}
+{% endschema %}

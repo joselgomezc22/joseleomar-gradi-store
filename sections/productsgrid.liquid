@@ -1,82 +1,176 @@
-<!--This product belongs in the following collections:
-<hr>
-{% for collection in collections %}
-    {{ collection  | json}}
-    <hr>
-{% endfor %}
--->
-{% assign settings_colores_array = settings.select_products_options | split: ' ' %}
-<style>
-    {% for color in settings_colores_array %}
-        {% assign css = color | split: ':' %}
-        .background_color_{{css[0]}}{
-            background-color:{{css[1]}}; 
-        }
-        <br>
-    {% endfor %}
-</style>
-
-<hr>
 <h1>{{section.settings.header}}</h1>
-<!-- 
-<ul>
-    {% for product in collections.all.products %}
-    <li>{{ product | json}}</li>
-    {% endfor %}
-</ul>     
--->
- 
 <div class="">
-  
     <div class="grid">
-        
         {% for product in collections[section.settings.featured_collection].products limit: section.settings.prod_cant %}
-                           
+        
         <div id="product_{{product.id}}_main" class="grid__cell">
-
-            <h2>{{ product.title }}</h2>
             
+            <h2>{{ product.title }}</h2>
             <dl>
                 <dt><span>Price</span></dt>
                 <dd>{{ product.price | money }}</dd> 
             </dl>
-            
-            
             {%- assign featured_image = product.featured_image -%}
             <a href="{{product.url}}">
                 <img id="product_{{product.id}}_image" class="product__image" src="{{ featured_image | img_url: '600x'}}" alt="{{ featured_image.alt | escape }}">
             </a>
-            
-            {% form 'product', product %}
+            {%- assign product_form_id = 'product-form-' | append: product.id | append: section.id -%}
 
-            {%-if product.variants-%}
-            <label>
-  
-               
-                {% for variant in product.variants %}
-                <a id="product_{{product.id}}_variant_{{ variant.title }}" href="">
-                    <span>{{ variant.title }}</span>
-                    <span> <img src="{{ variant.featured_image.src | img_url: '20x'}}" alt=""></span>
-                </a>  
-                {% endfor %}
-                  
-                 
-            </label>
-            {%- endif -%}
-            
-            <button type="submit" {% unless product.available %} disabled="disabled"{% endunless %}>
-                {%- if product.available -%}
-                Add to Cart
-                {%- else -%}
-                Sold Out
+            {%-if product.options_by_name['Color']-%}
+                Color
+                    <div style="display:flex;flex-direction:row;" class="grid__section">
+                        {% for color_option in product.options_by_name['Color'].values %}
+                        <div class="radio">
+                            {%- assign variant_image = product.variants | where: "title", color_option | map: 'featured_image' -%}
+                            {%- assign variantId = product.variants | where: "title", color_option | map: 'id' -%}
+                             
+                            <input  data-image="{{variant_image[0] | img_url: '250x'}}" onchange="color_selection_click({{product.id}},'{{ color_option }}','{{variant_image[0] | img_url: '250x'}}','{{variantId}}')" class="radio__input " type="radio" id="product_{{product.id}}_color_{{ color_option }}" name="product_{{product.id}}_color"> 
+                            <label 
+                                onmouseout="colorSelectionHoverOut({{product.id}},'{{ featured_image | img_url: '600x'}}')"
+                                onmouseover="colorSelectionHover({{product.id}},'{{ color_option }}','{{variant_image[0] | img_url: '250x'}}')"
+                                class="radio__label background_color_{{ color_option }}"
+                                for="product_{{product.id}}_color_{{ color_option }}"
+                              > 
+                            </label>   
+                        </div>
+                        {% endfor %}
+                    </div> 
+                
                 {%- endif -%}
-            </button>
-            {% endform %}
-        </div>
+                
+                <button  onclick="addToCart({{product.id}},{{product.selected_or_first_available_variant.id}})" type="button" {% unless product.available %} disabled="disabled"{% endunless %}>
+                    {%- if product.available -%}
+                    Add to Cart
+                    {%- else -%}
+                    Sold Out
+                    {%- endif -%}
+                </button>
+            </div>
             {% endfor %}
         </div>
-</div>
- 
+    </div>
+    
+{% assign settings_colores_array = settings.select_products_options | split: ' ' %}
+<style>
+    {% for color in settings_colores_array %}
+    {% assign css = color | split: ':' %}
+    .background_color_{{css[0]}}{
+        background-color:{{css[1]}}; 
+    }
+    {% endfor %}
+</style>
+{% stylesheet %}
+.grid { 
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: -15px;
+    font-size: 0;
+}
+.grid__cell {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    padding-left: 15px;
+    margin: 0;
+    vertical-align: top;
+    font-size: 1rem;
+    width: 25%;
+}
+.product{
+    min-height: 70vh;
+}
+.product__image{
+    width:100%;
+    max-height: 300px;
+    min-height: 300px;
+    object-fit: cover;
+}
+
+
+.radio{
+
+}
+.radio__input{
+     display:none
+}
+.radio__label{
+    display:inline-block;
+    width:12px;
+    height:12px;
+    border-radius:25px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+.radio__input:checked + label {
+    border: 1px solid white !important;
+    
+}
+.radio__input:hover label{
+    border: 1px solid white !important;
+}
+{% endstylesheet %}
+
+<script>
+    //Current Options Selected by Productid
+    this.current_product_option_selected = {
+        "0":{
+            img:"",
+            color_option : ""
+        }
+    };
+    function color_selection_click(product_id,option,imageUrl,variantId){
+        let img = document.getElementById("product_"+product_id+"_image");
+        img.src = imageUrl;
+        this.current_product_option_selected[product_id] = {
+            img     : imageUrl,
+            variant : variantId
+        };
+        console.log(this.current_product_option_selected);
+
+    }
+    function colorSelectionHover(product_id,option,imageUrl){
+        let img = document.getElementById("product_"+product_id+"_image");
+        img.src = imageUrl;
+    }
+    function colorSelectionHoverOut(product_id,imageUrl){
+        let img = document.getElementById("product_"+product_id+"_image");
+        let current = this.current_product_option_selected[product_id];
+        img.src = (current)? current.img : imageUrl ;
+    }
+    function addToCart(productId,defaultVariant){
+        let currentVariant  = this.current_product_option_selected[productId];
+        let formDataVariant = (currentVariant)? currentVariant.variant:defaultVariant;
+        let formData = {
+            'items': [{
+                'id': formDataVariant,
+                'quantity': 1
+            }]
+        };
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if(response.status == 200){
+                window.location.href = "/cart";
+            }
+            
+            if(response.status == 422){
+                alert('Producto no disponible')
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+</script>
 
 {% schema %}
 {
@@ -99,45 +193,6 @@
         "id": "featured_collection",
         "label": "Featured collection"
     }
-      
   ]
 }
 {% endschema %}
-
-{% javascript %}
-{% endjavascript %}
-
-{% stylesheet %}
-.grid {
-    display: block;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-left: -15px;
-    font-size: 0;
-}
-
-
-.grid__cell {
-    box-sizing: border-box;
-    display: inline-block;
-    width: 100%;
-    padding: 0;
-    padding-left: 15px;
-    margin: 0;
-    vertical-align: top;
-    font-size: 1rem;
-    width: 25%;
-}
-
-.product{
-    min-height: 70vh;
-}
-
-.product__image{
-    width:100%;
-    max-height: 300px;
-    min-height: 300px;
-    object-fit: cover;
-}
-{% endstylesheet %}
