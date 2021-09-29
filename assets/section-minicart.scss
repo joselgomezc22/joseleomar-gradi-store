@@ -1,0 +1,58 @@
+// Responsive mixins
+$phone-width: 280px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+$blue : blue;
+
+
+
+
+.minicart{
+    height: 80vh;
+    background: wheat;
+    z-index: 5;
+    position: fixed;
+    right: 0%;
+    transition: transform var(--duration-default) ease,visibility 0s;
+    .active{
+        transform: translateY(0);
+        visibility: visible;
+    }
+     
+    @include phone(){
+        
+    }
+    @include tablet(){   
+
+    }
+    @include desktop(){
+        width: 700px;
+        padding: 10px;
+    }
+ 
+    &.minicart__products{
+        overflow: auto; 
+        &.minicart__products__detail{
+        
+        }
+    }
+}
+.n{
+    color: $blue
+}  

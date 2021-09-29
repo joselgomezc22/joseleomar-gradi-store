@@ -1,0 +1,21 @@
+.minicart {
+  height: 80vh;
+  background: wheat;
+  z-index: 5;
+  position: fixed;
+  right: 0%;
+  transition: transform var(--duration-default) ease, visibility 0s; }
+  .minicart .active {
+    transform: translateY(0);
+    visibility: visible; }
+  @media (min-width: 1024px) {
+    .minicart {
+      width: 700px;
+      padding: 10px; } }
+  .minicart.minicart__products {
+    overflow: auto; }
+
+.n {
+  color: blue; }
+
+/*# sourceMappingURL=section-minicart.css.map */

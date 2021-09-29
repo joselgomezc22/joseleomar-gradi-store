@@ -1,16 +1,20 @@
-<div>
-  <h2>minicart</h2>
+{{ 'section-minicart.css' | asset_url | stylesheet_tag }}
+<div class="minicart active">
+<script src="{{ 'section-minicart.js' | asset_url }}" defer></script>
+  <h2 class="n">minicaart</h2>
+  <div class="minicart__products" id="minicart__main">
+
+  </div>
 </div>
-<style>
-   
+ 
+<style> 
+  {% for color in settings_colores_array %}
+  {% assign css = color | split: ':' %}
+  .background_color_{{css[0]}}{
+      background-color:{{css[1]}}; 
+  }
+  {% endfor %}
 </style>
-{% stylesheet %}
-
-{% endstylesheet %}
-
-<script>
-    
-</script>
 
 {% schema %}
 {
