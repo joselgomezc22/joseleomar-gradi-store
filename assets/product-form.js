@@ -35,8 +35,9 @@ if (!customElements.get('product-form')) {
             return;
           }
 
-          this.cartNotification.renderContents(response);
-        })
+          //this.cartNotification.renderContents(response);
+          minicart_init();
+        }) 
         .catch((e) => {
           console.error(e);
         })

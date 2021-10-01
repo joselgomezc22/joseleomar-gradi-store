@@ -1,21 +1,95 @@
+.button--tertiary {
+  min-width: 4rem; }
+
 .minicart {
-  height: 80vh;
-  background: wheat;
-  z-index: 5;
+  max-height: 95vh;
+  background: #fff9f9;
+  z-index: 30;
+  border-radius: 5px;
   position: fixed;
   right: 0%;
-  transition: transform var(--duration-default) ease, visibility 0s; }
-  .minicart .active {
-    transform: translateY(0);
+  transform: translateX(100%);
+  transition: transform var(--duration-default) ease, visibility 3s;
+  overflow: auto; }
+  .minicart.active {
+    transform: translateX(-1%) !important;
     visibility: visible; }
+  @media (min-width: 280px) and (max-width: 767px) {
+    .minicart {
+      width: 200px;
+      padding: 10px; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .minicart {
+      width: 300px;
+      padding: 10px; } }
   @media (min-width: 1024px) {
     .minicart {
-      width: 700px;
+      width: 500px;
       padding: 10px; } }
-  .minicart.minicart__products {
-    overflow: auto; }
-
-.n {
-  color: blue; }
+  .minicart .minicart__closeButton {
+    background: none;
+    font-size: 2rem;
+    border: none; }
+  .minicart .minicart__products .minicart__products__detail {
+    display: flex;
+    border-bottom: 1px black solid; }
+    .minicart .minicart__products .minicart__products__detail .minicart__products__firstcolumn {
+      width: 50%; }
+      .minicart .minicart__products .minicart__products__detail .minicart__products__firstcolumn .minicart__products__title {
+        font-weight: bold;
+        font-size: 2rem; }
+      .minicart .minicart__products .minicart__products__detail .minicart__products__firstcolumn .minicart__products__image {
+        margin: auto;
+        margin: 3px; }
+        .minicart .minicart__products .minicart__products__detail .minicart__products__firstcolumn .minicart__products__image img {
+          margin: auto;
+          width: 100%;
+          height: 200px;
+          object-fit: cover; }
+    .minicart .minicart__products .minicart__products__detail .minicart__products__detail__quantity {
+      width: 20%;
+      margin: 2px;
+      margin: auto;
+      text-align: center;
+      font-size: 2rem; }
+      .minicart .minicart__products .minicart__products__detail .minicart__products__detail__quantity .minicart__products__detail__quantity__button {
+        border: 1px solid;
+        min-height: 20px;
+        background: none;
+        min-width: 4rem;
+        font-size: 2rem; }
+    .minicart .minicart__products .minicart__products__detail .minicart__products__detail__price {
+      width: 20%;
+      margin: auto;
+      text-align: center; }
+      .minicart .minicart__products .minicart__products__detail .minicart__products__detail__price .minicart__products__detail__price_prices .minicart__products__detail__price_unit {
+        font-size: 1.0rem; }
+        .minicart .minicart__products .minicart__products__detail .minicart__products__detail__price .minicart__products__detail__price_prices .minicart__products__detail__price_unit .minicart__currencyCode {
+          font-size: 0.5rem; }
+      .minicart .minicart__products .minicart__products__detail .minicart__products__detail__price .minicart__products__detail__price_prices .minicart__products__detail__price_total {
+        font-size: 2rem; }
+        .minicart .minicart__products .minicart__products__detail .minicart__products__detail__price .minicart__products__detail__price_prices .minicart__products__detail__price_total .minicart__currencyCode {
+          font-size: 1.0rem; }
+  .minicart .minicart__footer {
+    border: 2px solid black;
+    width: 100%;
+    padding: 1px;
+    border-radius: 2px;
+    margin: auto; }
+    .minicart .minicart__footer .minicart__gotochechout {
+      text-align: center;
+      width: 100%; }
+      .minicart .minicart__footer .minicart__gotochechout .minicart__gotochechout__button {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 2rem;
+        padding: 5px; }
+    .minicart .minicart__footer .minicart__footer__total {
+      text-align: center;
+      width: 100%;
+      font-size: 2rem;
+      border-bottom: 1px solid black; }
+      .minicart .minicart__footer .minicart__footer__total .minicart__currencyCode {
+        font-size: 1.0rem; }
 
 /*# sourceMappingURL=section-minicart.css.map */
