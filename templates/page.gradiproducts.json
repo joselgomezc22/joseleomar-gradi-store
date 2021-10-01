@@ -1,12 +1,15 @@
 {
-    "sections": {
-      "main": {
-        "type": "productsgrid",
-        "settings": {
-        }
+  "sections": {
+    "main": {
+      "type": "productsgrid",
+      "settings": {
+        "header": "y",
+        "prod_cant": 2,
+        "featured_collection": "o"
       }
-    }, 
-    "order": [
-      "main"
-    ]
-  } 
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
