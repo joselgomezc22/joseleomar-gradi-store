@@ -1,0 +1,15 @@
+{{ 'gradi-banner.css' | asset_url | stylesheet_tag }}
+<div class="gradiBanner-main">
+    <div class="gradiBanner-main__div">
+        <span class="gradiBanner-main__div-text">Somos una tienda de alto impacto con más de XXXX órdenes entregadas y más de XXXX clientes a nivel mundial.</span>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "gradi_banner",
+    "tag":"section",
+    "blocks": []
+}
+{% endschema %}
+{{'gradi-banner.js' | asset_url | script_tag}} 

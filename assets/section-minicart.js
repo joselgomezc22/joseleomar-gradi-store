@@ -133,6 +133,6 @@ function minicart_RenderCart(data){
     div.innerHTML = productsHtml;
 }
 
-minicart_init();
+//minicart_init();
 
 

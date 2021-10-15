@@ -1,0 +1,23 @@
+.gradiBanner-main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); }
+  .gradiBanner-main .gradiBanner-main__div {
+    text-align: center;
+    width: 50%; }
+    .gradiBanner-main .gradiBanner-main__div .gradiBanner-main__div-text {
+      text-transform: uppercase;
+      font-size: 3rem;
+      font-weight: bold;
+      font-family: Assistant, sans-serif;
+      color: black; }
+
+/*# sourceMappingURL=gradi-banner.css.map */

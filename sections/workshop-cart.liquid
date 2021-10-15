@@ -1,0 +1,38 @@
+<div>
+    <div class="wside-cart__body" id="workshop-minicart-items">
+        
+        {% for item in cart.items %}
+        <div 
+        class="wside-cart-item"
+        data-variantId="{{item.variant.id}}"
+        id="{{item.id}}"
+        data-itemQuant="{{item.quantity}}"
+        >
+            <div class="wside-cart-item__title">
+                {{item.title}} 
+            </div>
+            <div class="wside-cart-item__quantity"
+            data-variantId="{{item.variant.id}}"
+            data-itemQuant="{{item.quantity}}"
+            >
+                <button class="js-decrease-product-quant">
+                    -
+                </button>
+                <p>
+                    {{item.quantity}}
+                </p>
+                <button class="js-increase-product-quant" type="button">
+                    + 
+                </button>
+                <button class="js-delete-product-quant" type="button">
+                    {% render 'icon-remove' %}
+                </button>
+            </div>
+            <div class="wside-cart-item__img">
+                <img src="{{item.image | image_url }}" alt="">
+            </div>
+        </div>              
+        <hr>
+        {% endfor %}
+    </div> 
+</div>

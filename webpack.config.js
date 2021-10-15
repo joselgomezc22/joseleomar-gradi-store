@@ -1,13 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
-  entry: { 
-    main: './src/index.js',
-    product: './src/product.js',
-  },
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'assets'),
     filename: '[name].js'
@@ -58,12 +54,8 @@ const config = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      appMountId: 'app',
-      filename: 'index.html'
-    }),
     new MiniCssExtractPlugin()
-  ],
+  ]
 };
 
 module.exports = config;
