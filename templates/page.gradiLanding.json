@@ -1,26 +1,24 @@
 {
-    "sections": {
-      "main": {
-        "type": "gradi-landing-banner",
-        "settings": {
-        }
-      },
-      "features": {
-        "type": "gradi-landing-features",
-        "settings": {
-        }
-      },
-      "footer": {
-        "type": "gradi-landing-footer",
-        "settings": {
-        }
+  "sections": {
+    "main": {
+      "type": "gradi-landing-banner",
+      "settings": {
       }
-      
-    }, 
-    "order": [ 
-      "main",
-      "features",
-      "footer"
-
-    ]
-  }  
+    },
+    "features": {
+      "type": "gradi-landing-features",
+      "settings": {
+      }
+    },
+    "footer": {
+      "type": "gradi-landing-footer",
+      "settings": {
+      }
+    }
+  },
+  "order": [ 
+    "main",
+    "features",
+    "footer"
+  ]
+}
