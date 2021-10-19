@@ -1,12 +1,32 @@
 {
     "sections": {
       "main": {
-        "type": "productsgrid",
+        "type": "gradi-landing-banner",
+        "settings": {
+        }
+      },
+      "features": {
+        "type": "gradi-landing-features",
+        "settings": {
+        }
+      },
+      "cta": {
+        "type": "gradi-cta",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "gradi-landing-footer",
         "settings": {
         }
       }
+      
     }, 
     "order": [
-      "main"
+      "main",
+      "features",
+      "cta", 
+      "footer"
+
     ]
   } 

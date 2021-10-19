@@ -1,0 +1,21 @@
+.gradi-cta{
+    &__overlay{
+        @include desktop(){
+          width:1166px;  
+        }
+        
+        background-color: #E6F6FE;
+    }
+    &__content{
+        
+    }
+    &__title{
+
+    }
+    &__desc{
+
+    }
+    &__button{
+
+    }
+}

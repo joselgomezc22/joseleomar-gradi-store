@@ -1,0 +1,44 @@
+
+
+<div class="landing-page-banner">
+    <div class="landing-page-banner__content">
+        <h1 class="landing-page-banner__title">{{section.settings.title}}</h1>
+        <h2 class="landing-page-banner__subtitle">{{section.settings.subtitle}}</h2>
+        <p class="landing-page-banner__introtext">{{section.settings.introtext}}</p>
+        <button class="landing-page-banner__ctaButton">{{section.settings.ctaButton}}</button>
+    </div>
+</div>  
+
+{% schema %}
+{
+    "name": "landing-page-banner",
+    "tag": "section",
+    "settings": 
+    [
+        {
+            "type": "text",
+            "id":"title",
+            "label":"Landing Title",
+            "default":"The Modern Landing page for"
+        },
+        {
+            "type": "text",
+            "id":"subtitle",
+            "label":"Landing Subtitle",
+            "default":"React developers"
+        },
+        {
+            "type": "text",
+            "id":"introtext",
+            "label":"Intro Text",
+            "default":"The easiest way to build a React landing page in seconds."
+        },
+        {
+            "type": "text",
+            "id":"ctaButton",
+            "label":"Call to Action Banner button",
+            "default":"Download Your Free Theme"
+        }
+    ] 
+} 
+{% endschema %}

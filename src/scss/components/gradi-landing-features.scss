@@ -1,0 +1,52 @@
+.gradi-landing-features{
+    width: 100%;
+     &__overlay{
+
+     }
+
+
+     &__header{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         vertical-align: middle;
+         @include desktop(){
+            height: 40vh;
+         }
+        &-content{
+             text-align: center;
+             width: 70%;
+        }
+        &-title{
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 42px;
+            color: #1A202C;
+        }
+        &-subtitle{
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 23px;
+            text-align: center;
+        }
+     }
+
+
+     &__content{ 
+        &-feature{
+            display:flex;
+         }
+         .revert{
+            flex-direction:row-reverse;
+        } 
+        &-feature-title{
+             
+        }
+        &-feature-desc{
+             
+        }
+        &-feature-img{
+             
+        }
+     }
+}   
