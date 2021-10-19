@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "sections": {
       "main": {
         "type": "gradi-landing-banner",
@@ -24,67 +23,4 @@
       "footer"
 
     ]
-  } 
-=======
-  "sections": {
-    "main": {
-      "type": "gradi-landing-banner",
-      "settings": {
-        "title": "The Modern Landing page for",
-        "subtitle": "React developers",
-        "introtext": "The easiest way to build a React landing page in seconds.",
-        "ctaButton": "Download Your Free Theme"
-      }
-    },
-    "features": {
-      "type": "gradi-landing-features",
-      "blocks": {
-        "baddf7e9-d37b-4336-8091-7d71101390d5": {
-          "type": "feature",
-          "settings": {
-            "feature-image": "shopify:\/\/shop_images\/pexels-castorly-stock-4109765_1.jpg",
-            "feature-title": "Your title here",
-            "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-          }
-        },
-        "78e39dd2-fbd8-484f-8cd0-c01987e5bf81": {
-          "type": "feature",
-          "settings": {
-            "feature-image": "shopify:\/\/shop_images\/pexels-ray-piedra-1537671.jpg",
-            "feature-title": "Your title here",
-            "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-          }
-        }
-      },
-      "block_order": [
-        "baddf7e9-d37b-4336-8091-7d71101390d5",
-        "78e39dd2-fbd8-484f-8cd0-c01987e5bf81"
-      ],
-      "settings": {
-        "title": "Your title here",
-        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at."
-      }
-    },
-    "cta": {
-      "type": "gradi-cta",
-      "settings": {
-        "title": "Your title here",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at.",
-        "button-text": "Get Started",
-        "button-link": "\/"
-      }
-    },
-    "footer": {
-      "type": "gradi-landing-footer",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "main",
-    "features",
-    "cta",
-    "footer"
-  ]
-}
->>>>>>> e6ef880853f20085c3e817768a44b7a20e1619a2
+  }  
