@@ -10,11 +10,6 @@
         "settings": {
         }
       },
-      "cta": {
-        "type": "gradi-cta",
-        "settings": {
-        }
-      },
       "footer": {
         "type": "gradi-landing-footer",
         "settings": {
@@ -22,10 +17,9 @@
       }
       
     }, 
-    "order": [
+    "order": [ 
       "main",
       "features",
-      "cta", 
       "footer"
 
     ]

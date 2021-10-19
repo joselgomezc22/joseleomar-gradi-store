@@ -75,15 +75,62 @@
   border: none;
   color: white;
   height: 73px;
+  margin: 25px;
   font-weight: bold;
   font-size: 20px;
   line-height: 23px; }
 
-.gradi-cta__overlay {
-  background-color: #E6F6FE; }
+.gradi-cta {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px; }
+  @media (min-width: 280px) and (max-width: 767px) {
+    .gradi-cta {
+      flex-direction: column; } }
+  .gradi-cta__overlay {
+    background-color: #E6F6FE; }
+    @media (min-width: 1024px) {
+      .gradi-cta__overlay {
+        width: 100%; } }
+  .gradi-cta__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000; }
+  .gradi-cta__desc {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #03A9F4; }
+  .gradi-cta__button {
+    background: #03A9F4;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    padding: 10px; }
   @media (min-width: 1024px) {
-    .gradi-cta__overlay {
-      width: 1166px; } }
+    .gradi-cta__textcol {
+      width: 70%; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .gradi-cta__textcol {
+      width: 60%; } }
+  @media (min-width: 280px) and (max-width: 767px) {
+    .gradi-cta__textcol {
+      width: 100%;
+      text-align: center; } }
+  @media (min-width: 1024px) {
+    .gradi-cta__buttoncol {
+      width: 30%; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .gradi-cta__buttoncol {
+      width: 40%; } }
+  @media (min-width: 280px) and (max-width: 767px) {
+    .gradi-cta__buttoncol {
+      width: 100%;
+      text-align: center; } }
 
 .gradi-landing-features {
   width: 100%; }
@@ -108,8 +155,52 @@
       font-size: 20px;
       line-height: 23px;
       text-align: center; }
-  .gradi-landing-features__content-feature {
-    display: flex; }
-  .gradi-landing-features__content .revert {
-    flex-direction: row-reverse; }
+  .gradi-landing-features__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .gradi-landing-features__content-feature {
+      display: flex;
+      align-items: center;
+      width: 70%;
+      margin: 5%; }
+      @media (min-width: 280px) and (max-width: 767px) {
+        .gradi-landing-features__content-feature {
+          flex-direction: column; } }
+    .gradi-landing-features__content-feature-column {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      vertical-align: middle; }
+      @media (min-width: 1024px) {
+        .gradi-landing-features__content-feature-column {
+          width: 50%;
+          padding: 15px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .gradi-landing-features__content-feature-column {
+          width: 50%;
+          padding: 15px; } }
+    @media (min-width: 1024px) {
+      .gradi-landing-features__content .revert {
+        flex-direction: row-reverse; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .gradi-landing-features__content .revert {
+        flex-direction: row-reverse; } }
+    .gradi-landing-features__content-feature-title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 23px;
+      color: #000000; }
+  .gradi-landing-features__cta {
+    display: flex;
+    justify-content: center; }
+    @media (min-width: 1024px) {
+      .gradi-landing-features__cta-content {
+        width: 80%; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .gradi-landing-features__cta-content {
+        width: 80%; } }
+    @media (min-width: 280px) and (max-width: 767px) {
+      .gradi-landing-features__cta-content {
+        width: 95%; } }
 

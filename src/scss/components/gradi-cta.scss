@@ -1,21 +1,63 @@
 .gradi-cta{
+    display: flex;
+    @include phone(){
+        flex-direction: column;
+    }
+    align-items: center;
+    padding:15px;
+    border-radius: 10px;
     &__overlay{
         @include desktop(){
-          width:1166px;  
+          width: 100%;
         }
-        
         background-color: #E6F6FE;
     }
-    &__content{
-        
-    }
     &__title{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+
+        color: #000000;
 
     }
     &__desc{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
 
+        color: #03A9F4;
     }
     &__button{
-
+        background: #03A9F4;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px; 
+        color: #FFFFFF;
+        padding:10px;
     }
-}
+    &__textcol{
+        @include desktop (){
+            width:70%;  
+        }
+        @include tablet (){
+            width:60%;
+        }
+        @include phone (){
+           width:100%;
+           text-align: center;
+        }
+    }
+    &__buttoncol{
+        @include desktop (){
+            width:30%;
+        }
+        @include tablet (){
+            width:40%;
+        }
+        @include phone (){
+            width:100%;
+            text-align: center;
+        }
+    }
+} 

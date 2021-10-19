@@ -33,14 +33,49 @@
 
 
      &__content{ 
+         display: flex;
+          
+           flex-direction: column;  
+         
+         
+         align-items: center;
+
         &-feature{
             display:flex;
+            align-items: center;
+         @include phone(){
+            flex-direction: column;  
+         }
+            width: 70%;
+            margin: 5%;
+         }
+         &-feature-column{
+             @include desktop(){
+                width: 50%;  
+                padding: 15px;
+             }
+             @include tablet(){
+                width: 50%;  
+                padding: 15px;
+             }
+             text-align: center;
+             display: flex;
+             flex-direction: column;
+             vertical-align: middle;
          }
          .revert{
-            flex-direction:row-reverse;
+             @include desktop(){
+                 flex-direction:row-reverse;
+             }
+             @include tablet(){
+                 flex-direction:row-reverse;
+             }
         } 
         &-feature-title{
-             
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 23px;
+            color: #000000;
         }
         &-feature-desc{
              
@@ -49,4 +84,19 @@
              
         }
      }
+     &__cta{
+         display:flex;
+         justify-content:center;
+         &-content{
+             @include desktop(){
+               width: 80%;  
+             }
+            @include tablet(){
+                width: 80%;
+            }
+            @include phone(){
+                width: 95%;
+            }
+         }
+     } 
 }   
