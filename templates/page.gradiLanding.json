@@ -51,17 +51,10 @@
         "cta-button-text": "Get Started",
         "cta-button-link": "\/"
       }
-    },
-    "footer": {
-      "type": "gradi-landing-footer",
-      "settings": {
-        "footer_menu": ""
-      }
     }
   },
   "order": [
     "main",
-    "features",
-    "footer"
+    "features"
   ]
 }
