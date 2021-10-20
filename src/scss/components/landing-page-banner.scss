@@ -25,15 +25,12 @@
 
         &-nav{
            width:50%; 
-           
-
            display: flex;
            justify-content: end;
             align-items: end;
         }
         
         &__menu{
-
             &-a{
                 text-decoration:none;
                 margin:10px;
@@ -43,9 +40,7 @@
                 color: #2D3748;
             }
         } 
-
         height: 20vh;
-        
     }
 
 
