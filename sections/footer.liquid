@@ -315,14 +315,14 @@
 
 <footer class="gradi-landing-footer__overlay">
   <div class="gradi-landing-footer">
+    <div class="gradi-landing-footer__logo">
+      <img class="gradi-landing-footer__logo-img" src="{{section.settings.footer_logo | img_url}}" alt=""> 
+      
+    </div>  
       <div class="gradi-landing-footer__menu">
-           
-                  {% for link in section.settings.footer_menu.links %}
-                   
-                      <a class="gradi-landing-footer__menu-a" href="{{ link.url }}">{{ link.title }}</a>
-                   
-                  {% endfor %} 
-              
+        {% for link in section.settings.footer_menu.links %}
+            <a class="gradi-landing-footer__menu-a" href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}   
       </div>
       
       <div class="gradi-landing-footer__socialicons">
@@ -538,7 +538,7 @@
   "settings": [
     { 
         "type": "image_picker",
-        "id": "footer-logo",
+        "id": "footer_logo",
         "label": "Footer Image"
     }, 
     {
