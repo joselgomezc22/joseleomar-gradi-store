@@ -73,6 +73,7 @@
           "070eb0dc-2601-4a23-8ce1-55935c849de7"
         ],
         "settings": {
+          "footer-logo": "shopify:\/\/shop_images\/chartlogo.jpg",
           "footer_menu": "landingpage-footer-menu",
           "color_scheme": "background-1",
           "newsletter_enable": false,
