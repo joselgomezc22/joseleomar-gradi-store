@@ -73,7 +73,7 @@
           "070eb0dc-2601-4a23-8ce1-55935c849de7"
         ],
         "settings": {
-          "footer_menu": "footer",
+          "footer_menu": "landingpage-footer-menu",
           "color_scheme": "background-1",
           "newsletter_enable": false,
           "newsletter_heading": "Subscribe to our emails",
