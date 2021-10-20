@@ -10,9 +10,9 @@
          align-items: center;
          justify-content: center;
          vertical-align: middle;
-         @include desktop(){
-            height: 40vh;
-         }
+         height: 40vh;
+          
+          
         &-content{
              text-align: center;
              width: 70%;

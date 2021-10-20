@@ -1,6 +1,26 @@
 
 
 <div class="landing-page-banner">
+    <header class="landing-page-banner__header">
+        <div class="landing-page-banner__header-content">
+            <div class="landing-page-banner__header-logo">
+                <img src="{{section.settings.banner_logo | image_url}}" alt="">
+            </div>  
+            <div class="landing-page-banner__header-nav">
+                <div class="landing-page-banner__header__menu">
+ 
+                    {% for link in section.settings.banner_menu.links %}
+
+                        <a class="landing-page-banner__header__menu-a" href="{{ link.url }}">{{ link.title }}</a>
+
+                    {% endfor %} 
+
+                </div>
+            </div>   
+        </div>
+        
+    </header> 
+    
     <div class="landing-page-banner__content">
         <h1 class="landing-page-banner__title">{{section.settings.title}}</h1>
         <h2 class="landing-page-banner__subtitle">{{section.settings.subtitle}}</h2>
@@ -15,6 +35,16 @@
     "tag": "section",
     "settings": 
     [
+        {
+            "type":"image_picker",
+            "id":"banner_logo",
+            "label":"Hero logo"
+        },
+        {
+            "type":"link_list",
+            "id":"banner_menu",
+            "label":"Hero Menu"
+        },
         {
             "type": "text",
             "id":"title",
