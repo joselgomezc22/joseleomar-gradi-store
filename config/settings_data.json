@@ -36,7 +36,44 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "2a603e12-0cef-4ec5-966d-17cccc0fea7c": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "facebook",
+              "social_url": "\/"
+            }
+          },
+          "c29d2cb6-3471-4827-a2db-be5b79cead3b": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "youtube",
+              "social_url": "\/"
+            }
+          },
+          "8d9ff63a-8298-486c-9af2-940a500d0d6b": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "snapchat",
+              "social_url": "\/"
+            }
+          },
+          "070eb0dc-2601-4a23-8ce1-55935c849de7": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "pinterest",
+              "social_url": "\/"
+            }
+          }
+        },
+        "block_order": [
+          "2a603e12-0cef-4ec5-966d-17cccc0fea7c",
+          "c29d2cb6-3471-4827-a2db-be5b79cead3b",
+          "8d9ff63a-8298-486c-9af2-940a500d0d6b",
+          "070eb0dc-2601-4a23-8ce1-55935c849de7"
+        ],
         "settings": {
+          "footer_menu": "footer",
           "color_scheme": "background-1",
           "newsletter_enable": false,
           "newsletter_heading": "Subscribe to our emails",
