@@ -3,6 +3,8 @@
     "main": {
       "type": "gradi-landing-banner",
       "settings": {
+        "banner_logo": "shopify:\/\/shop_images\/Apple_logo_black.svg_64c93bad-c64e-497c-93db-0bde35ab92dd.png",
+        "banner_menu": "landing-hero-menu",
         "title": "The Modern Landing page for",
         "subtitle": "React developers",
         "introtext": "The easiest way to build a React landing page in seconds.",

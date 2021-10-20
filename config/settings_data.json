@@ -26,6 +26,7 @@
       "header": {
         "type": "header",
         "settings": {
+          "hidde_header": true,
           "color_scheme": "background-1",
           "logo_width": 100,
           "logo_position": "middle-left",
