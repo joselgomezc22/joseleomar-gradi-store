@@ -35,8 +35,14 @@ if (!customElements.get('product-form')) {
             return;
           }
 
+<<<<<<< HEAD
           this.cartNotification.renderContents(response);
         })
+=======
+          //this.cartNotification.renderContents(response);
+          minicart_init();
+        }) 
+>>>>>>> prod
         .catch((e) => {
           console.error(e);
         })

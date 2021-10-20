@@ -209,6 +209,17 @@
           }
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    "select_products_options":{
+      "name":"Theme product colors",
+      "settings":{
+        "colors_set":{
+          "label":"Colors set"
+        }
+      }
+>>>>>>> prod
     }
   },
   "sections": {

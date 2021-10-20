@@ -8,10 +8,18 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
+<<<<<<< HEAD
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
     {%- endif -%}
 
+=======
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+    {%- endif -%}
+>>>>>>> prod
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
@@ -126,6 +134,7 @@
     </a>
 
     {% section 'announcement-bar' %}
+<<<<<<< HEAD
     {% section 'header' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
@@ -138,6 +147,48 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
     </ul>
 
+=======
+    {% section 'minicart' %}
+    {% section 'header' %}
+
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    <!-- Workshop Minicart-->
+    <div class="wside-cart__overlay ac tive" id="wsideCartOverlay">
+      <div class="wside-cart ">
+        <div class="wside-cart__header">
+          <p class="wside-cart__title">
+            Title sidecart
+          </p> 
+          <button type="button" id="wsideCartCloseButton">
+            X
+          </button> 
+        </div>
+        <div class="wside-cart__body" id="wsideCartItems">
+          {% section 'workshop-cart' %}
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    
+    {% section 'footer' %}
+    
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+    </ul>
+    
+>>>>>>> prod
     <script>
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
@@ -145,17 +196,26 @@
         cart_update_url: '{{ routes.cart_update_url }}',
         predictive_search_url: '{{ routes.predictive_search_url }}'
       };
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> prod
       window.cartStrings = {
         error: `{{ 'sections.cart.cart_error' | t }}`,
         quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t }}`
       }
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> prod
       window.variantStrings = {
         addToCart: `{{ 'products.product.add_to_cart' | t }}`,
         soldOut: `{{ 'products.product.sold_out' | t }}`,
         unavailable: `{{ 'products.product.unavailable' | t }}`,
       }
+<<<<<<< HEAD
 
       window.accessibilityStrings = {
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
@@ -166,4 +226,18 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
   </body>
+=======
+      
+      window.accessibilityStrings = {
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+      }
+      </script>
+
+{%- if settings.predictive_search_enabled -%}
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<!-- Main js-->
+<script src="{{ 'main.js' | asset_url }}" defer="defer"></script>  
+</body>
+>>>>>>> prod
 </html>

@@ -9,6 +9,7 @@
     "colors_background_2": "#F3F3F3",
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
+<<<<<<< HEAD
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -17,16 +18,102 @@
             "type": "announcement",
             "settings": {
               "color_scheme": "background-1"
+=======
+    "select_products_options": "black:black\nred:#FF0000\nmaroon:#800000\nyellow:#FFFF00\ngreen:#00FF00",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+        }
+      },
+      "minicart": {
+        "type": "minicart",
+        "settings": {
+          "header": "",
+          "featured_collection": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "hidde_header": true,
+          "color_scheme": "background-1",
+          "logo_width": 100,
+          "logo_position": "middle-left",
+          "menu": "main-menu",
+          "show_line_separator": false,
+          "enable_sticky_header": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "2a603e12-0cef-4ec5-966d-17cccc0fea7c": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "facebook",
+              "social_url": "\/"
+            }
+          },
+          "c29d2cb6-3471-4827-a2db-be5b79cead3b": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "youtube",
+              "social_url": "\/"
+            }
+          },
+          "8d9ff63a-8298-486c-9af2-940a500d0d6b": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "snapchat",
+              "social_url": "\/"
+            }
+          },
+          "070eb0dc-2601-4a23-8ce1-55935c849de7": {
+            "type": "social_icons",
+            "settings": {
+              "social_icons": "pinterest",
+              "social_url": "\/"
+>>>>>>> prod
             }
           }
         },
         "block_order": [
+<<<<<<< HEAD
           "announcement-bar-0"
         ],
         "settings": {
         }
       }
     }
+=======
+          "2a603e12-0cef-4ec5-966d-17cccc0fea7c",
+          "c29d2cb6-3471-4827-a2db-be5b79cead3b",
+          "8d9ff63a-8298-486c-9af2-940a500d0d6b",
+          "070eb0dc-2601-4a23-8ce1-55935c849de7"
+        ],
+        "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/Apple_logo_black.svg_64c93bad-c64e-497c-93db-0bde35ab92dd.png",
+          "footer_menu": "landingpage-footer-menu",
+          "color_scheme": "background-1",
+          "newsletter_enable": false,
+          "newsletter_heading": "Subscribe to our emails",
+          "show_social": false,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "payment_enable": false
+        }
+      },
+      "workshop-cart": {
+        "type": "workshop-cart",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+>>>>>>> prod
   },
   "presets": {
     "Default": {
@@ -94,4 +181,8 @@
       }
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> prod

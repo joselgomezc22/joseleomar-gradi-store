@@ -328,5 +328,18 @@
         "default": true
       }
     ]
+<<<<<<< HEAD
+=======
+  },
+  {
+    "name": "t:settings_schema.select_products_options.name",
+    "settings": [
+      {
+        "type": "textarea",
+        "label": "t:settings_schema.select_products_options.settings.colors_set.label",
+        "id": "select_products_options"
+      }
+    ] 
+>>>>>>> prod
   }
 ]

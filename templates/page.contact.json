@@ -1,19 +1,28 @@
 {
   "sections": {
+<<<<<<< HEAD
     "main": {
       "type": "main-page",
       "settings": {
       }
     },
+=======
+>>>>>>> prod
     "form": {
       "type": "contact-form",
       "settings": {
         "heading": ""
       }
+<<<<<<< HEAD
     }
   },
   "order": [
     "main",
+=======
+    } 
+  },
+  "order": [
+>>>>>>> prod
     "form"
   ]
 }

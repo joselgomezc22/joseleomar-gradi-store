@@ -1,0 +1,15 @@
+{{ 'gradi-options-selector.css' | asset_url | stylesheet_tag }}
+<div class="gradiOptionsSelector-main">
+    <div class="gradiOptionsSelector-main__div">
+        <span class="gradiOptionsSelector-main__div-text"> </span>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "gradi_optios_selector",
+    "tag":"section",
+    "blocks": []
+}
+{% endschema %}
+{{'gradi-options-selector.js' | asset_url | script_tag}} 

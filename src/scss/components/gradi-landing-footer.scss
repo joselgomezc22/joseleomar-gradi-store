@@ -1,0 +1,52 @@
+.gradi-landing-footer{
+    &__overlay{
+        width: 100%;
+        @include desktop(){
+           height: 50vh;
+           align-items: end;
+        }
+        @include phone(){
+            padding:20px;
+        }
+        
+        justify-content: center;
+        
+        display: flex;
+        background-color: #F7FAFC;
+        margin-top: 4rem;
+        padding-bottom: 5%;
+    }
+    &__menu{
+        text-align:center;
+        &-a{
+            text-decoration:none;
+            margin:10px;
+            font-size: 20px;
+            line-height: 23px;
+            text-align: center;
+            color: #2D3748;
+        }
+    } 
+    &__logo{ 
+        text-align:center;
+        &-img{
+            height:40px;
+            margin:10px;
+        }
+    }
+    &__socialicons{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        
+         &-svg{   
+            margin: 5px;
+            svg {
+                height:20px !important;
+            } 
+
+         }
+      
+    }
+} 
+

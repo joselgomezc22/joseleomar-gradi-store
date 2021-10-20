@@ -1,0 +1,107 @@
+
+<div class="gradi-landing-footer__overlay">
+    <div class="gradi-landing-footer">
+        <div class="gradi-landing-footer__menu">
+             
+                    {% for link in section.settings.footer_menu.links %}
+                     
+                        <a class="gradi-landing-footer__menu-a" href="{{ link.url }}">{{ link.title }}</a>
+                     
+                    {% endfor %} 
+                
+        </div>
+        
+        <div class="gradi-landing-footer__socialicons">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'social_icons' %}
+                        <div class="gradi-landing-footer__socialicons-svg">
+                            {% render 'social-icons', network : block.settings.social_icons %}
+                        </div>
+                    {% else %}  
+
+                {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
+        
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+    "name" : "landing_footer",
+    "tag": "section",
+    "settings":[
+        { 
+            "type": "image_picker",
+            "id": "footer-logo",
+            "label": "Footer Image"
+        },
+        {
+            "type": "link_list",
+            "id": "footer_menu",
+            "label": "Footer menu"
+        }
+    ], 
+    "blocks":[
+        {
+            "name":"Social Icons",
+            "type":"social_icons",
+            "settings":[
+            {
+                "type": "select",
+                "id": "social_icons",
+                "label": "Social icon",
+                "options": [
+                  {
+                    "value": "tiktok",
+                    "label": "Tiktok" 
+                  },
+                  {
+                    "value": "twitter",
+                    "label": "Twitter"
+                  },
+                  {
+                    "value": "instagram",
+                    "label": "Instagram"
+                  },
+                  {
+                    "value": "facebook",
+                    "label": "Facebook"
+                  },
+                  {
+                    "value": "youtube",
+                    "label": "Youtube"
+                  },
+                  {
+                    "value": "snapchat",
+                    "label": "Snapchat"
+                  },
+                  {
+                    "value": "pinterest",
+                    "label": "Pinterest"
+                  },
+                  {
+                    "value": "github",
+                    "label": "Github"
+                  }
+                ],
+                "default": "tiktok"
+              }, 
+              {
+                  "type":"url",
+                  "id":"social_url",
+                  "label":"Social Network URL",
+                  "default":"/"
+              }
+            ]
+        }
+    ]
+    
+}
+{% endschema %}

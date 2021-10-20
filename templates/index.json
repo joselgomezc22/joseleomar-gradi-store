@@ -119,10 +119,23 @@
       ],
       "settings": {
       }
+<<<<<<< HEAD
     }
   },
   "order": [
     "image_banner",
+=======
+    },
+    "gradi_banner": {
+      "type": "gradi-banner",
+      "settings": {
+      }
+    }
+  },
+  "order": [ 
+    "image_banner",
+    "gradi_banner",
+>>>>>>> prod
     "rich_text",
     "featured_products",
     "collage",

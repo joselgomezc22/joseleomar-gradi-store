@@ -1,0 +1,141 @@
+
+<div class="gradi-landing-features">
+    <div class="gradi-landing-features__header">
+        <div class="gradi-landing-features__header-content">
+            <p class="gradi-landing-features__header-title">{{section.settings.title}}</p>   
+            <p class="gradi-landing-features__header-subtitle">{{section.settings.subtitle}}</p>
+        </div>
+    </div> 
+
+    {% assign reverseFlag = 0 %} 
+    <div class="gradi-landing-features__content">
+     
+        {% for block in section.blocks %}
+     
+            {% case block.type %}
+                {% when 'feature' %}
+
+                {% if reverseFlag == 0 %}
+                {% assign reverseFlag = 1 %} 
+                {% elsif reverseFlag == 1 %}
+                {% assign reverseFlag = 0 %} 
+                {% endif %} 
+                    <div class="gradi-landing-features__content-feature {% unless reverseFlag == 0 %}revert{% endunless %}">
+                        <div class="gradi-landing-features__content-feature-column">
+                            <p class="gradi-landing-features__content-feature-title">
+                               {{block.settings.feature-title}}
+                            </p> 
+                            <p class="gradi-landing-features__content-feature-desc">
+                               {{block.settings.feature-description}}
+                            </p> 
+                        </div>
+                        <div class="gradi-landing-features__content-feature-column"> 
+                            <img class="gradi-landing-features__content-feature-img"
+                             src="{{block.settings.feature-image | image_url }}"
+                              alt="">
+                        </div>
+                    </div>
+                {% else %}
+            {% endcase %}
+        {% endfor %}
+    </div>
+    {%comment %}
+        Call to action assigs 
+    {%endcomment %}
+    {% if section.settings.show-cta %}
+        {% assign ctaTitle  = section.settings.cta-title %}
+        {% assign ctaDesc   = section.settings.cta-desc %}
+        {% assign ctaLabel  = section.settings.cta-button-text %}
+        {% assign ctaLink   = section.settings.cta-button-link %}
+
+        <div class="gradi-landing-features__cta">
+            <div class="gradi-landing-features__cta-content">
+              {% render 'gradi-cta', cta_title: ctaTitle , cta_desc: ctaDesc , cta_link: ctaLink , cta_label : ctaLabel  %}  
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+
+{% schema %}
+{
+    "name":"features",
+    "tag":"section",
+    "settings": 
+        [
+            {
+                "type": "text",
+                "id":"title",
+                "label":"Features Title",
+                "default":"Your title here"
+            },
+            {
+                "type": "text",
+                "id":"subtitle",
+                "label":"Features Subtitle",
+                "default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at."
+            },
+            {
+                "type": "checkbox",
+                "id":"show-cta",
+                "label":"Show CTA?",
+                "default":true
+            },
+            {
+                "type": "text",
+                "id":"cta-title",
+                "label":"CTA Title",
+                "default":"Your title here"
+            },
+            {
+                "type": "text",
+                "id":"cta-desc",
+                "label":"CTA Description",
+                "default":"Start your Free Trial."
+            },
+            {
+                "type": "text",
+                "id":"cta-button-text",
+                "label":"CTA button text",
+                "default":"Get Started"
+            },
+            {
+                "type": "url",
+                "id":"cta-button-link",
+                "label":"CTA button url",
+                "default":"/"
+            }
+        ],
+            "blocks": 
+            [
+                {
+                    "name": "Features",
+                    "type": "feature",
+                    "settings": [ 
+                        { 
+                            "type": "image_picker",
+                            "id": "feature-image",
+                            "label": "Feature Image"
+                        },
+                        {
+                            "type": "text",
+                            "id": "feature-title",
+                            "label": "Feature Title",
+                            "default": "Your title here",
+                            "info": "Feature Title",
+                            "placeholder": "Feature Title"
+                        },
+                        {
+                            "type": "textarea",
+                            "id": "feature-description",
+                            "label": "Feature Description",
+                            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.",
+                            "info": "Feature Description",
+                            "placeholder": "Feature Description"
+                        } 
+                    ] 
+                }
+            ]
+} 
+{% endschema %}

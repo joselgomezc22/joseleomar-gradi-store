@@ -1,0 +1,57 @@
+{{ 'section-minicart.css' | asset_url | stylesheet_tag }}
+<div class="minicart " id="minicart">
+  <button title="Close minicart" class="minicart__closeButton" onclick="closeSideCart()">x</button>
+  <script src="{{ 'section-minicart.js' | asset_url }}" defer></script>
+    
+  <div class="minicart__products " id="minicart__main">
+     
+  </div>   
+  <div class="minicart__footer">
+    <div>
+      <div class="minicart__footer__total">
+      Total: <span id="minicart__total_ammount"></span>
+    </div>
+    <div class="minicart__gotochechout">
+      <a href="/checkout" class="minicart__gotochechout__button">
+        Go To Checkout
+      </a>
+    </div>
+    </div>
+    
+  </div> 
+  
+</div>
+   
+<style> 
+  {% for color in settings_colores_array %}
+  {% assign css = color | split: ':' %}
+  .background_color_{{css[0]}}{
+      background-color:{{css[1]}}; 
+  } 
+  {% endfor %}
+</style>
+
+{% schema %}
+{
+  "name": "ProductsGradiweb",
+  "tag":"div",
+  "class":"clase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Coloca el titulo"
+    },
+    {
+      "type": "number",
+      "id": "prod_cant",
+      "label": "Prod Quant"
+    },
+    {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Featured collection"
+    }
+  ]
+}
+{% endschema %}

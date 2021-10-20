@@ -1,0 +1,75 @@
+{{ 'section-slide.css' | asset_url | stylesheet_tag }}
+
+{% assign numb = 0 %}
+<div class="product-slide-main">
+    {% for block in section.blocks %}
+    {% case block.type %}
+    {% when 'slide' %}
+
+    <div id="product-slide-{{numb}}" class="product-slide " id="{{block.id}}">
+        {% assign numb = numb | plus: 1 %}
+        <div class="slide-text">
+            <div class="slide-title">
+                <span class="slide-title__span">
+                    {{ block.settings.slide-title}}
+                </span>
+            </div>  
+            <div class="slide-desc">
+                <span class="slide-desc__span">
+                    {{ block.settings.slide-description }}
+                </span>
+            </div>
+        </div> 
+        <div class="slide-image"> 
+            <img class="slide-image__img" src="{{ block.settings.slide-image | img_url: '488x'}}" alt="">
+        </div> 
+    </div>
+    {% endcase %}
+    {% endfor %}
+    <button id="slideBackButton"
+     type="button" onclick="changeSlide(false)"
+     class="product-slide__button product-slide__button-back">
+      -</button>
+    <button id="slideAheadButton"
+     type="button" onclick="changeSlide(true)"
+     class="product-slide__button product-slide__button-front">+</button>
+</div>
+
+ 
+
+{% schema %}
+    {
+        "name": "products-grid",
+        "tag":"section",
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "slide",
+                "settings": [ 
+                    {
+                        "type": "image_picker",
+                        "id": "slide-image",
+                        "label": "Slide Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slide-title",
+                        "label": "Slide Title",
+                        "default": "Slide Title",
+                        "info": "Slide Title",
+                        "placeholder": "Slide Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "slide-description",
+                        "label": "Slide Description",
+                        "default": "Slide Description",
+                        "info": "Slide Description",
+                        "placeholder": "Slide Description"
+                    } 
+                ] 
+            }
+        ]
+    }
+{% endschema %}
+{{'section-product-slide.js'   | asset_url | script_tag}} 

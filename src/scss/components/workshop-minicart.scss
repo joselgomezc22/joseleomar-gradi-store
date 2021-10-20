@@ -1,0 +1,33 @@
+.wside-cart{
+    &__overlay{
+        width:100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        will-change: opacity;
+        transition: opacity .3s;
+        opacity: 0;
+        visibility: hidden;
+        overflow: auto;
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .3s;
+        }
+    }  
+    &__header{
+
+    }
+    &__title{
+        font-size: 2rem;
+
+    }
+    &__body{
+        block-size: 100%;
+        inline-size: 50%;
+        background-color:white;
+    }
+} 

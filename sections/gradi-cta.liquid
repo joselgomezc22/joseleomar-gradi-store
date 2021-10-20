@@ -1,0 +1,34 @@
+
+{% render 'gradi-cta',var:'ola' %}
+{% schema %}
+{
+    "name":"gradi_cta",
+    "tag":"section",
+    "settings":[
+        {
+            "type": "text",
+            "id":"title",
+            "label":"CTA Title",
+            "default":"Your title here"
+        },
+        {
+            "type": "text",
+            "id":"desc",
+            "label":"CTA Description",
+            "default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at."
+        },
+        {
+            "type": "text",
+            "id":"button-text",
+            "label":"CTA button text",
+            "default":"Get Started"
+        },
+        {
+            "type": "url",
+            "id":"button-link",
+            "label":"CTA button url",
+            "default":"/"
+        }
+    ]
+}
+{% endschema %}

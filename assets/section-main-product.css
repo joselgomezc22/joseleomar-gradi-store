@@ -180,8 +180,13 @@ fieldset.product-form__input .form__label {
 }
 
 .product-form__input input[type='radio']:checked + label {
+<<<<<<< HEAD
   background-color: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
+=======
+  /*background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));*/
+>>>>>>> prod
 }
 
 .product-form__input input[type='radio']:disabled + label {
