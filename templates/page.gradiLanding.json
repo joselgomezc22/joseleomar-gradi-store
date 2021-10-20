@@ -51,53 +51,10 @@
         "cta-button-text": "Get Started",
         "cta-button-link": "\/"
       }
-    },
-    "footer": {
-      "type": "gradi-landing-footer",
-      "blocks": {
-        "32e92cbd-a490-408b-af34-693f6435fb4e": {
-          "type": "social_icons",
-          "settings": {
-            "social_icons": "tiktok",
-            "social_url": "\/"
-          }
-        },
-        "fcbc871d-b2fb-4cb6-8123-fce61ae6468f": {
-          "type": "social_icons",
-          "settings": {
-            "social_icons": "youtube",
-            "social_url": "\/"
-          }
-        },
-        "14be1bae-20f4-4f57-abd1-306939947731": {
-          "type": "social_icons",
-          "settings": {
-            "social_icons": "instagram",
-            "social_url": "\/"
-          }
-        },
-        "5c1d7c74-1e54-4a2a-88c2-c6a9949dfca8": {
-          "type": "social_icons",
-          "settings": {
-            "social_icons": "snapchat",
-            "social_url": "\/"
-          }
-        }
-      },
-      "block_order": [
-        "32e92cbd-a490-408b-af34-693f6435fb4e",
-        "fcbc871d-b2fb-4cb6-8123-fce61ae6468f",
-        "14be1bae-20f4-4f57-abd1-306939947731",
-        "5c1d7c74-1e54-4a2a-88c2-c6a9949dfca8"
-      ],
-      "settings": {
-        "footer_menu": "footer"
-      }
     }
   },
   "order": [
     "main",
-    "features",
-    "footer"
+    "features"
   ]
 }
