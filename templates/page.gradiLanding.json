@@ -3,20 +3,63 @@
     "main": {
       "type": "gradi-landing-banner",
       "settings": {
+        "title": "The Modern Landing page for",
+        "subtitle": "React developers",
+        "introtext": "The easiest way to build a React landing page in seconds.",
+        "ctaButton": "Download Your Free Theme"
       }
     },
     "features": {
       "type": "gradi-landing-features",
+      "blocks": {
+        "53b942ce-4c3b-49ac-8097-81d0162bb96c": {
+          "type": "feature",
+          "settings": {
+            "feature-image": "shopify:\/\/shop_images\/feature.png",
+            "feature-title": "Your title here",
+            "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+          }
+        },
+        "ad5c63e6-ff5b-42d4-8267-e3255f02a851": {
+          "type": "feature",
+          "settings": {
+            "feature-image": "shopify:\/\/shop_images\/feature2.png",
+            "feature-title": "Your title here",
+            "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+          }
+        },
+        "38503375-7e71-4acb-9f6a-c5c09b312574": {
+          "type": "feature",
+          "settings": {
+            "feature-image": "shopify:\/\/shop_images\/feature3.png",
+            "feature-title": "Your title here",
+            "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+          }
+        }
+      },
+      "block_order": [
+        "53b942ce-4c3b-49ac-8097-81d0162bb96c",
+        "ad5c63e6-ff5b-42d4-8267-e3255f02a851",
+        "38503375-7e71-4acb-9f6a-c5c09b312574"
+      ],
       "settings": {
+        "title": "Your title here",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus malesuada nisi tellus, non imperdiet nisi tempor at.",
+        "show-cta": true,
+        "cta-title": "Your title here",
+        "cta-desc": "Start your Free Trial.",
+        "cta-button-text": "Get Started",
+        "cta-button-link": "\/"
       }
     },
     "footer": {
       "type": "gradi-landing-footer",
       "settings": {
+        "footer_menu": ""
       }
     }
   },
-  "order": [ 
+  "order": [
     "main",
     "features",
     "footer"
