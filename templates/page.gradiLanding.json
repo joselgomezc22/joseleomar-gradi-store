@@ -15,7 +15,7 @@
         "53b942ce-4c3b-49ac-8097-81d0162bb96c": {
           "type": "feature",
           "settings": {
-            "feature-image": "shopify:\/\/shop_images\/pexels-castorly-stock-4109765_1.jpg",
+            "feature-image": "shopify:\/\/shop_images\/feature.png",
             "feature-title": "Your title here",
             "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
           }
@@ -23,7 +23,15 @@
         "ad5c63e6-ff5b-42d4-8267-e3255f02a851": {
           "type": "feature",
           "settings": {
-            "feature-image": "shopify:\/\/shop_images\/pexels-pixabay-52500.jpg",
+            "feature-image": "shopify:\/\/shop_images\/feature2.png",
+            "feature-title": "Your title here",
+            "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
+          }
+        },
+        "38503375-7e71-4acb-9f6a-c5c09b312574": {
+          "type": "feature",
+          "settings": {
+            "feature-image": "shopify:\/\/shop_images\/feature3.png",
             "feature-title": "Your title here",
             "feature-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
           }
@@ -31,7 +39,8 @@
       },
       "block_order": [
         "53b942ce-4c3b-49ac-8097-81d0162bb96c",
-        "ad5c63e6-ff5b-42d4-8267-e3255f02a851"
+        "ad5c63e6-ff5b-42d4-8267-e3255f02a851",
+        "38503375-7e71-4acb-9f6a-c5c09b312574"
       ],
       "settings": {
         "title": "Your title here",
